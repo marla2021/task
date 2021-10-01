@@ -26,9 +26,10 @@ def search():
         if not model:
             response = entities
         else:
-            for e in entities:
-                if e["model"] == model:
-                    response.append(e)
+            for word in model.split():
+                for e in entities:
+                    if word in e["model"]:
+                        response.append(e)
         return render_template("search_ause.html", entities=response)
 
 
