@@ -37,8 +37,8 @@ def card(eid: int):
 
     with open('entities.json') as f:
         entities = json.load(f)
-        for ent in entities:
-            if ent["id"] == eid:
+        for en in entities:
+            if en["id"] == eid:
                 return render_template("card_full.html", entity=ent)
 
 @app.route('/short_card/<int:eid>')
